@@ -7,7 +7,7 @@ cd BarcodePrintTSPL
 sudo pip3 install -r requirements.txt
 sudo python3 setup.py install
 
-#№ set up configuration
+## set up configuration
 
 sudo mkdir /etc/barcode_service
 sudo cp configs.ini.example /etc/barcode_service/config.ini
