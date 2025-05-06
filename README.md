@@ -1,4 +1,4 @@
-```html
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -16,7 +16,6 @@
 </head>
 <body>
     <h1>Служба печати штрихкодов</h1>
-
     <div class="section">
         <h2>Основные возможности</h2>
         <ul>
@@ -34,7 +33,6 @@
             <li>Автозапуск через systemd</li>
         </ul>
     </div>
-
     <div class="section">
         <h2>Поддерживаемое оборудование</h2>
         <h3>Сканеры:</h3>
@@ -43,7 +41,6 @@
             <li>Zebra DS2208</li>
             <li>Другие HID-клавиатурные сканеры</li>
         </ul>
-        
         <h3>Принтеры:</h3>
         <ul>
             <li>Xprinter XP-365B</li>
@@ -51,7 +48,6 @@
         </ul>
         <div class="warning">Не поддерживаются: графические принтеры без TSPL</div>
     </div>
-
     <div class="section">
         <h2>Алгоритм работы</h2>
         <ol>
@@ -67,24 +63,20 @@
             <li>Отправка на печать</li>
         </ol>
     </div>
-
     <div class="section">
         <h2>Установка и настройка</h2>
-        
         <details>
             <summary><strong>Шаг 1: Установка зависимостей</strong></summary>
             <pre><code>sudo apt-get update
 sudo apt-get install python3-dev python3-pip libjpeg-dev zlib1g-dev
 pip3 install -r requirements.txt</code></pre>
         </details>
-
         <details>
             <summary><strong>Шаг 2: Настройка сервиса</strong></summary>
             <pre><code>sudo cp configs/barcode.service /etc/systemd/system/
 sudo systemctl daemon-reload
 sudo systemctl enable barcode.service</code></pre>
         </details>
-
         <details>
             <summary><strong>Шаг 3: Конфигурация</strong></summary>
             <pre><code>sudo mkdir /etc/barcode_service
@@ -92,7 +84,6 @@ sudo cp configs/config.ini.example /etc/barcode_service/config.ini
 sudo nano /etc/barcode_service/config.ini</code></pre>
         </details>
     </div>
-
     <div class="section">
         <h2>Управление сервисом</h2>
         <pre><code># Запуск сервиса
@@ -104,7 +95,6 @@ systemctl status barcode.service
 # Просмотр логов
 journalctl -u barcode.service -f</code></pre>
     </div>
-
     <div class="section">
         <h2>Важные примечания</h2>
         <ul>
